@@ -18,7 +18,9 @@ public:
     void Print(){cout<<name<<" "<<id<<endl;}
 };
 
-Person ::Person(const Person &p) {
+//copy constructor! 
+//making deep copy for delete heap memori
+Person ::Person(const Person &p) { 
     id = p.id;
 
     int len = strlen(p.name);
