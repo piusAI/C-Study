@@ -11,10 +11,20 @@ public:
         this->kick = kick;
         this->punch = punch;
     }
-    Power operator+(const Power &op2);
     void print();
-    
+    Power operator+(const Power &op2); // + operator override
+    bool operator==(const Power &op3); // == operator override
+
 };
+bool Power::operator==(const Power &op3) {
+    if (this-> kick == op3.kick && this->punch ==op3.punch)
+        {
+        return true;
+    }
+    else {
+        return true;
+    }
+}
 void Power::print()
 {
     cout<< this->kick << " "<<this->punch <<endl;
@@ -33,6 +43,9 @@ int main()
     Power p2(40,-2);
     Power p3 = p1.operator+(p2);
     p3.print();
-    
+
+    Power p4(20,2);
+    cout<<"p4 == p1? : "<<boolalpha<<p4.operator==(p1) <<endl;
+
     return 0;
 }
