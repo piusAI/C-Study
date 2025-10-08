@@ -12,10 +12,19 @@ public:
         this->punch = punch;
     }
     void print();
-    Power operator+(const Power &op2); // + operator override
-    bool operator==(const Power &op3); // == operator override
+    Power operator+(int amount);            // + operator int
+    Power operator+(const Power &op2);      // + operator override
+    bool operator==(const Power &op3);      // == operator override
+    Power& operator +=(const Power &op4);   // += operator override
 
 };
+
+//return type : reference  & pointer value
+Power& Power::operator+=(const Power &op4) {
+    this->kick +=op4.kick;
+    this->punch +=op4.punch;
+    return *this;
+}
 bool Power::operator==(const Power &op3) {
     if (this-> kick == op3.kick && this->punch ==op3.punch)
         {
@@ -36,6 +45,12 @@ Power Power::operator+(const Power &op2)
     tmp.punch = this->punch + op2.punch;
     return tmp;
 }
+Power Power::operator+(int amount) {
+    Power tmp;
+    tmp.kick = this->kick + amount;
+    tmp.punch  = this->punch + amount;
+    return tmp;
+}
 
 int main()
 {
@@ -46,6 +61,18 @@ int main()
 
     Power p4(20,2);
     cout<<"p4 == p1? : "<<boolalpha<<p4.operator==(p1) <<endl;
+
+    Power p5(1,8);
+    p5.operator+=(p1);
+    p5.print();
+
+    Power a(3,5), b(4,5), c;
+    c= a+=b; // 파워 객체 더하기
+    c.print();
+
+    Power h(7,11), t;
+    t=h+2;
+    t.print();
 
     return 0;
 }
