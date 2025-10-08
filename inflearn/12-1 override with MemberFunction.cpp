@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 using namespace std;
 
@@ -7,6 +9,8 @@ class Point
 public:
     Point(int _x=0, int _y=0) : x(_x), y(_y){}
     void ShowPosition();
+     
+    //멤버 함수로 operator + 정의
     Point operator+(const Point &p);
 };
 
