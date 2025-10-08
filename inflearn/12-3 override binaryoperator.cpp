@@ -12,7 +12,7 @@ public:
         this->punch = punch;
     }
     void print();
-    Power operator+(int amount);            // + operator int
+    Power operator+(const int &amount);      // + operator int override
     Power operator+(const Power &op2);      // + operator override
     bool operator==(const Power &op3);      // == operator override
     Power& operator +=(const Power &op4);   // += operator override
@@ -45,7 +45,7 @@ Power Power::operator+(const Power &op2)
     tmp.punch = this->punch + op2.punch;
     return tmp;
 }
-Power Power::operator+(int amount) {
+Power Power::operator+(const int &amount) {
     Power tmp;
     tmp.kick = this->kick + amount;
     tmp.punch  = this->punch + amount;
