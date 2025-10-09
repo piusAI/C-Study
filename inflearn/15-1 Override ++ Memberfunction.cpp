@@ -21,9 +21,9 @@ Power& Power::operator++()
 }
 Power Power::operator++(int a)
 {
-    Power temp;
-    temp.kick = this->kick++;
-    temp.punch = this->punch++;
+    Power temp = *this; //순서 헷갈리지말기!, 객체 전체 복사후 증가해야함!
+    this->kick++;
+    this->punch++;
     return temp;
 }
 
