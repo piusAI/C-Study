@@ -7,6 +7,7 @@ public:
     int mode;
 };
 
+// 가상상속 : BaseID::mode 단일 복사본 유지, 다이아몬드 문제 해결!
 class In : virtual public BaseID {
 public:
     int readPos;
