@@ -1,3 +1,6 @@
+//다형성 예제 : virtual로 shape에서 rect draw 오버라이딩
+//shape *ps로 Rect 객체를 가리킴, ps->draw는 Rect::draw()를 호출
+
 #include <iostream>
 using namespace std;
 
