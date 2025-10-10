@@ -24,6 +24,6 @@ int main()
     Base *pBase;
     pBase = pDer;   // upcasting으로 Derive class를 가리킨다.
                     // Base::f()가 virtual이므로, Derivde::f()가 overriding!
-    pBase->f();     // 런타임에 자식의 Derive ::f() 호출
+    pBase->f();     // 런타임에 base를 가리키지만, 동적바인딩으로 자식의 Derive ::f() 호출
     
 }
